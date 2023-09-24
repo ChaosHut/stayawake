@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teal, Orange & Purple Farbverlauf</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px; /* Schriftgröße erhöht */
+            font-family: Calibri, "Helvetica Neue", Arial, sans-serif; /* Schriftart geändert */
+            color: white;
+            text-align: center;
+            background-size: 200% 200%, 200% 200%, 200% 200%;
+            animation: gradientAnimation 12s infinite alternate;
+            background-image: 
+                radial-gradient(circle at 50% 50%, teal, transparent),
+                radial-gradient(circle at 60% 60%, orange, transparent),
+                radial-gradient(circle at 40% 40%, purple, transparent);
+        }
+
+        p {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 100% 0%, 0% 100%, 50% 50%;
+            }
+            25% {
+                background-position: 50% 100%, 100% 50%, 0% 0%;
+            }
+            50% {
+                background-position: 0% 0%, 100% 100%, 100% 0%;
+            }
+            75% {
+                background-position: 50% 0%, 0% 50%, 100% 100%;
+            }
+            100% {
+                background-position: 100% 100%, 0% 0%, 50% 50%;
+            }
+        }
+
+        #hiddenVideo {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Stay awake
+    </p>
+    <!-- Unsichtbares und stummes Video -->
+    <video id="hiddenVideo" autoplay loop muted>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Ihr Browser unterstützt das Video-Tag nicht.
+    </video>
+</body>
+</html>
